@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meii Store ID</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background: #0c0b1a;
+            color: white;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header */
+        h1 {
+            text-align: center;
+            font-size: 48px;
+            margin: 30px 0;
+            color: #b388ff;
+            text-shadow: 0 0 20px #7c4dff;
+        }
+        
+        /* Profile Card */
+        .profile {
+            background: linear-gradient(145deg, #1a1430, #0f0b20);
+            border: 2px solid #7c4dff;
+            border-radius: 30px;
+            padding: 30px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(145deg, #7c4dff, #3d1a8f);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            border: 4px solid #b388ff;
+        }
+        
+        /* Nomor Box */
+        .nomor-box {
+            background: #1a1430;
+            border: 3px solid #7c4dff;
+            border-radius: 60px;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .nomor-box span {
+            font-size: 24px;
+            font-weight: bold;
+            color: #b388ff;
+        }
+        
+        .btn-copy {
+            background: #7c4dff;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .btn-copy:hover {
+            background: #b388ff;
+        }
+        
+        /* Grid Produk */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .product {
+            background: linear-gradient(145deg, #1a1430, #0f0b20);
+            border: 2px solid #7c4dff;
+            border-radius: 30px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+        
+        .product:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px #7c4dff;
+        }
+        
+        .product i {
+            font-size: 50px;
+            color: #b388ff;
+            margin-bottom: 20px;
+        }
+        
+        .product h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .product p {
+            color: #b388ff;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        
+        .harga {
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            margin: 15px 0;
+        }
+        
+        .btn-order {
+            background: #7c4dff;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            width: 100%;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .btn-order i {
+            font-size: 18px;
+            margin: 0;
+            color: white;
+        }
+        
+        .btn-order:hover {
+            background: #b388ff;
+        }
+        
+        /* Trust */
+        .trust {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 50px 0;
+            text-align: center;
+        }
+        
+        .trust-item {
+            background: #1a1430;
+            border: 2px solid #7c4dff;
+            border-radius: 30px;
+            padding: 20px;
+        }
+        
+        .trust-item h2 {
+            font-size: 32px;
+            color: #b388ff;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            border-top: 2px solid #7c4dff;
+            color: #b388ff;
+        }
+        
+        /* Alert */
+        .alert {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #7c4dff;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: none;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Alert -->
+        <div class="alert" id="alert">
+            <i class="fas fa-check-circle"></i> Nomor berhasil disalin!
+        </div>
+        
+        <!-- Header -->
+        <h1>⚡ MEII STORE ID ⚡</h1>
+        
+        <!-- Profile -->
+        <div class="profile">
+            <div class="avatar">‍🎨👾</div>
+            <div style="flex: 1">
+                <h2 style="margin-bottom: 10px;">Hai, aku Meii! 👋</h2>
+                <p style="color: #b388ff; margin-bottom: 20px;">Digital Creator • 1.2K+ Customer • 4.9/5</p>
+                
+                <!-- NOMOR BOX -->
+                <div class="nomor-box">
+                    <i class="fab fa-whatsapp" style="color: #25D366; font-size: 32px;"></i>
+                    <span>0887-4371-29357</span>
+                    <button class="btn-copy" onclick="copyNomor()">
+                        <i class="fas fa-copy"></i> Salin Nomor
+                    </button>
+                </div>
+                <p style="color: gray; font-size: 14px;">⬆️ Klik tombol copy, buka WA, paste, chat</p>
+            </div>
+        </div>
+        
+        <!-- Produk -->
+        <h2 style="font-size: 32px; margin: 40px 0 20px;">📦 PRODUK KAMI</h2>
+        
+        <div class="product-grid">
+            <!-- Produk 1 -->
+            <div class="product">
+                <i class="fas fa-layer-group"></i>
+                <h3>Aset Editing</h3>
+                <p>Overlay, filter, font eksklusif. Format PNG/EPS/PSD.</p>
+                <div class="harga">Rp5.000</div>
+                <button class="btn-order" onclick="copyDanKasihTau('Aset Editing Rp5K')">
+                    <i class="fab fa-whatsapp"></i> Copy & Order
+                </button>
+            </div>
+            
+            <!-- Produk 2 -->
+            <div class="product">
+                <i class="fas fa-cubes"></i>
+                <h3>Full Pack Aset</h3>
+                <p>Paket lengkap aset + background premium. ALL IN ONE!</p>
+                <div class="harga">Rp10.000</div>
+                <button class="btn-order" onclick="copyDanKasihTau('Full Pack Aset Rp10K')">
+                    <i class="fab fa-whatsapp"></i> Copy & Order
+                </button>
+            </div>
+            
+            <!-- Produk 3 -->
+            <div class="product">
+                <i class="fas fa-book-open"></i>
+                <h3>E-book Cara Cuan</h3>
+                <p>Panduan lengkap cuan dari produk digital.</p>
+                <div class="harga">Rp15.000</div>
+                <button class="btn-order" onclick="copyDanKasihTau('E-book Cara Cuan Rp15K')">
+                    <i class="fab fa-whatsapp"></i> Copy & Order
+                </button>
+            </div>
+            
+            <!-- Produk 4 -->
+            <div class="product">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Tutorial Canva</h3>
+                <p>Dari 0 sampai mahir. Tips desain kekinian.</p>
+                <div class="harga">Rp5.000</div>
+                <button class="btn-order" onclick="copyDanKasihTau('Tutorial Canva Rp5K')">
+                    <i class="fab fa-whatsapp"></i> Copy & Order
+                </button>
+            </div>
+            
+            <!-- Produk 5 -->
+            <div class="product">
+                <i class="fas fa-video"></i>
+                <h3>Alight Motion</h3>
+                <p>Tutorial edit video AM step-by-step.</p>
+                <div class="harga">Rp10.000</div>
+                <button class="btn-order" onclick="copyDanKasihTau('Tutorial AM Rp10K')">
+                    <i class="fab fa-whatsapp"></i> Copy & Order
+                </button>
+            </div>
+            
+            <!-- Produk 6 -->
+            <div class="product">
+                <i class="fas fa-gift"></i>
+                <h3>Bundle Hemat</h3>
+                <p>Full Pack + E-book + 2 Tutorial. Hemat 5K!</p>
+                <div class="harga">Rp25.000</div>
+                <button class="btn-order" onclick="copyDanKasihTau('Bundle Hemat Rp25K')">
+                    <i class="fab fa-whatsapp"></i> Copy & Order
+                </button>
+            </div>
+            
+            <!-- Produk 7 -->
+            <div class="product">
+                <i class="fas fa-magic"></i>
+                <h3>Template Premium</h3>
+                <p>Template Canva & sosial media eksklusif.</p>
+                <div class="harga">Rp8.000</div>
+                <button class="btn-order" onclick="copyDanKasihTau('Template Premium Rp8K')">
+                    <i class="fab fa-whatsapp"></i> Copy & Order
+                </button>
+            </div>
+            
+            <!-- Produk 8 -->
+            <div class="product">
+                <i class="fas fa-font"></i>
+                <h3>Font Eksklusif</h3>
+                <p>Koleksi font aesthetic. Komersial gratis.</p>
+                <div class="harga">Rp7.000</div>
+                <button class="btn-order" onclick="copyDanKasihTau('Font Eksklusif Rp7K')">
+                    <i class="fab fa-whatsapp"></i> Copy & Order
+                </button>
+            </div>
+        </div>
+        
+        <!-- Trust -->
+        <div class="trust">
+            <div class="trust-item">
+                <h2>1.2K+</h2>
+                <p>Customer</p>
+            </div>
+            <div class="trust-item">
+                <h2>4.9</h2>
+                <p>Rating</p>
+            </div>
+            <div class="trust-item">
+                <h2>Instant</h2>
+                <p>Delivery</p>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p><i class="fas fa-store"></i> 2025 Meii Store ID</p>
+            <p><i class="fab fa-whatsapp"></i> 0887-4371-29357</p>
+            <p><i class="fas fa-clock"></i> 09.00 - 21.00 WIB</p>
+        </div>
+    </div>
+    
+    <script>
+        function copyNomor() {
+            const nomor = "0887437129357";
+            navigator.clipboard.writeText(nomor).then(function() {
+                const alert = document.getElementById('alert');
+                alert.style.display = 'block';
+                setTimeout(function() {
+                    alert.style.display = 'none';
+                }, 2000);
+            });
+        }
+        
+        function copyDanKasihTau(produk) {
+            const nomor = "0887437129357";
+            const pesan = `Halo Meii, saya mau order ${produk}`;
+            
+            navigator.clipboard.writeText(nomor).then(function() {
+                const alert = document.getElementById('alert');
+                alert.style.display = 'block';
+                alert.innerHTML = '<i class="fas fa-check-circle"></i> Nomor disalin! ' + produk;
+                
+                setTimeout(function() {
+                    alert.style.display = 'none';
+                }, 3000);
+                
+                // Kasih popup manual
+                alert('NOMOR UDAH DI COPY!\n\nBuka WhatsApp, paste nomor, kirim pesan:\n"' + pesan + '"');
+            });
+        }
+    </script>
+</body>
+</html>
